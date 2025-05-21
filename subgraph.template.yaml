@@ -8,7 +8,7 @@ dataSources:
   # FeeSharingProxy, for detecting withdrawal slashes
   - kind: ethereum/contract
     name: FeeSharingProxy
-    network: {{network}}
+    network: {{FeeSharingProxy.network}}
     source:
       address: '{{FeeSharingProxy.address}}'
       abi: FeeSharingProxy
@@ -29,7 +29,7 @@ dataSources:
   # Staking
   - kind: ethereum/contract
     name: Staking
-    network: {{network}}
+    network: {{Staking.network}}
     source:
       address: '{{Staking.address}}'
       abi: Staking

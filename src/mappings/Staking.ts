@@ -31,6 +31,7 @@ export function handleTokensStaked(event: TokensStakedEvent): void {
 
     deposit.amount = event.params.amount;
     deposit.transaction = transaction.id
+    deposit.timestamp = event.block.timestamp.toI32()
 
     deposit.save();
 }
@@ -59,6 +60,7 @@ export function handleWithdrawCall(call: WithdrawCall): void {
     withdraw.transaction = transaction.id
 
     withdraw.slash = slash == null ? null : slash.id
+    withdraw.timestamp = call.block.timestamp.toI32()
 
     withdraw.save();
 }
@@ -90,6 +92,7 @@ export function handleExtendStakingDurationCall(call: ExtendStakingDurationCall)
     extend.stake = newStake.id
     extend.prevStake = oldStake.id
     extend.transaction = transaction.id
+    extend.timestamp = call.block.timestamp.toI32()
 
     extend.save();
 }
