@@ -1,11 +1,21 @@
 {
   "network":"mainnet",
   "node": {
-    "address":"https://RSK_RPC_ENDPOING_WITH_GET_LOGS_ENABLED",
+    "address":"https://mainnet.sovryn.app/rpc",
     "log_level":"debug"
   },
   "ERC20": {
     "address":"0xefc78fc7d48b64958315949279ba181c2114abbd",
     "startBlock": 0
+  },
+  "Staking": {
+    "network": "mainnet",
+    "address": "0x5684a06CaB22Db16d901fEe2A5C081b4C91eA40e",
+    "startBlock": 3100263
+  },
+  "FeeSharingProxy": {
+    "network": "mainnet",
+    "address": "0x115cAF168c51eD15ec535727F64684D33B7b08D1",
+    "startBlock": 3769580
   }
 }

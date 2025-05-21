@@ -7,5 +7,15 @@
     "ERC20": {
       "address":"0x9D1464Af4c1963835c325024e823ef0Ac3622Ec1",
       "startBlock": 4992978
+    },
+    "Staking": {
+      "network": "testnet",
+      "address": "0xc37A85e35d7eECC82c4544dcba84CF7E61e1F1a3",
+      "startBlock": 1606434
+    },
+    "FeeSharingProxy": {
+        "network": "testnet",
+        "address": "0x740E6f892C0132D659Abcd2B6146D237A4B6b653",
+        "startBlock": 1606438
     }
 }
