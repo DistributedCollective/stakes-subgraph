@@ -1,12 +1,21 @@
 import { Address, BigInt } from "@graphprotocol/graph-ts";
 import { Stake, Staking } from "../../generated/schema";
+import { Staking as StakingContract } from "../../generated/Staking/Staking";
 import { createAndReturnUser } from "./User";
+import { STAKING_CONTRACT } from "../contracts";
 
 export function createAndReturnStaking(): Staking {
   let staking = Staking.load(Address.zero().toHexString());
 
   if (staking == null) {
+    const contract = StakingContract.bind(STAKING_CONTRACT)
+
     staking = new Staking(Address.zero().toHexString());
+
+    staking.kickoffTS = contract.kickoffTS().toI32()
+    staking.weightScaling = contract.weightScaling()
+
+    staking.save()
   }
 
   return staking;

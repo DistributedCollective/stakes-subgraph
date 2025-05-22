@@ -71,6 +71,8 @@ build/
 data/
 bin/
 
+src/contracts.ts
+
 subgraph.yaml
 docker-compose.yml
 .env.dev

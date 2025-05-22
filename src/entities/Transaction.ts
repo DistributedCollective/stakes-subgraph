@@ -1,6 +1,7 @@
 import { ethereum } from "@graphprotocol/graph-ts";
 import { Transaction } from "../../generated/schema";
 import { createAndReturnUser } from "./User";
+import { createAndReturnStaking } from "./Staking";
 
 export function createAndReturnTransaction(event: ethereum.Event): Transaction {
   let transaction = Transaction.load(event.transaction.hash.toHexString());
@@ -19,6 +20,8 @@ export function createAndReturnTransaction(event: ethereum.Event): Transaction {
       .toHexString()
       .slice(0, 10);
     transaction.save();
+
+    createAndReturnStaking()
   }
   return transaction as Transaction;
 }

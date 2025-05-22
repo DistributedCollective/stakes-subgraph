@@ -42,7 +42,8 @@ type User @entity(immutable: false) {
 type Staking @entity(immutable: false) {
   id: ID!
   weightScaling: BigInt!
-  transaction: Transaction!
+  kickoffTS: Int!
+  transaction: Transaction
 }
 
 type Stake @entity(immutable: false) {
