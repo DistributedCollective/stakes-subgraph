@@ -2,12 +2,7 @@
   "network":"mainnet",
   "node": {
     "address":"https://mainnet.sovryn.app/rpc",
-    "log_level":"debug"
-  },
-  "ERC20": {
-    "network": "rootstock",
-    "address":"0xefc78fc7d48b64958315949279ba181c2114abbd",
-    "startBlock": 0
+    "log_level":"info"
   },
   "Staking": {
     "network": "rootstock",

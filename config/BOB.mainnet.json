@@ -1,0 +1,17 @@
+{
+    "network": "mainnet",
+    "node": {
+        "address": "https://rpc.gobob.xyz",
+        "log_level": "info"
+    },
+  "Staking": {
+    "network": "optimism",
+    "address": "0xc17C6462cEAFE9A8819258c6bA168BEF5544Fc21",
+    "startBlock": 797159
+  },
+  "FeeSharingProxy": {
+    "network": "optimism",
+    "address": "0x0000000000000000000000000000000000000000",
+    "startBlock": 797159
+  }
+}
