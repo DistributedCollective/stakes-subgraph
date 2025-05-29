@@ -17,8 +17,8 @@
     "scaffold": "node utils/scaffoldFromAbi.js",
     "cd": "npm run create-local && npm run deploy-local",
     "prepare": "husky install",
-    "prepare:BOB": "sh ./scripts/prepare_bob.sh",
-    "prepare:RSK": "sh ./scripts/prepare_mainnet.sh",
+    "prepare:BOB:mainnet": "sh ./scripts/prepare_bob.sh",
+    "prepare:RSK:mainnet": "sh ./scripts/prepare_mainnet.sh",
     "test-start-block": "node -r esm utils/startFromLaterBlock.js",
     "dev:up": "docker compose --env-file .env.dev up -d",
     "dev:down": "docker compose --env-file .env.dev down"
