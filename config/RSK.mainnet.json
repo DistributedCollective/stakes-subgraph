@@ -5,12 +5,12 @@
     "log_level":"info"
   },
   "Staking": {
-    "network": "rootstock",
+    "network": "mainnet",
     "address": "0x5684a06CaB22Db16d901fEe2A5C081b4C91eA40e",
     "startBlock": 3100263
   },
   "FeeSharingProxy": {
-    "network": "rootstock",
+    "network": "mainnet",
     "address": "0x115cAF168c51eD15ec535727F64684D33B7b08D1",
     "startBlock": 3769580
   }
