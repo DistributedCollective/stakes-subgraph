@@ -7,7 +7,7 @@
     "codegen": "graph codegen",
     "build": "graph build",
     "deploy": "graph deploy DistributedCollective/stakes-subgraph --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "graph deploy DistributedCollective/stakes-subgraph --ipfs http://localhost:5001 --node http://127.0.0.1:8020 --version-label v0.0.1",
+    "deploy-local": "graph deploy DistributedCollective/stakes-subgraph --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
     "dev": "npm run codegen && npm run deploy-local",
     "dev:no-build": "npm run codegen && npm run deploy-local",
     "dev:nodemon": "node_modules/nodemon/bin/nodemon.js --exec 'npm run dev' --ignore build/ --ignore generated/ --ignore data/ --ext 'ts,json,graphql,yaml'",
