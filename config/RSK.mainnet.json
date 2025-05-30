@@ -1,7 +1,7 @@
 {
   "network":"mainnet",
   "node": {
-    "address":"https://mainnet.sovryn.app/rpc",
+    "address":"https://rsk-internal.sovryn.app/rpc",
     "log_level":"info"
   },
   "Staking": {
