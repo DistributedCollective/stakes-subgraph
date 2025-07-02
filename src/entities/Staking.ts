@@ -1,4 +1,4 @@
-import { Address, ethereum, store } from "@graphprotocol/graph-ts";
+import { Address, BigInt, ethereum } from "@graphprotocol/graph-ts";
 import { Stake, Staking } from "../../generated/schema";
 import { Staking as StakingContract } from "../../generated/Staking/Staking";
 import { createAndReturnUser } from "./User";
@@ -42,8 +42,14 @@ export function loadActiveStakes(address: Address, event: ethereum.Event): void 
     const date = currentStakes[i].lockedUntil;
     const existsInNewStakes = newDates.includes(date);
     if (!existsInNewStakes) {
-      // Remove the stake from the user's stakes
-      store.remove("Stake", id);
+      // Set the amount to zero and update the stake
+      const stake = Stake.load(id);
+      if (stake !== null) {
+        stake.amount = BigInt.zero();
+        stake.updatedAt = event.block.timestamp.toI32();
+        stake.transaction = transaction.id;
+        stake.save();
+      }
     }
   }
 
