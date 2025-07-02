@@ -34,8 +34,6 @@ type User @entity(immutable: false) {
   createdAt: Int!
 
   stakes: [Stake!]! @derivedFrom(field: "user")
-  deposits: [Deposit!]! @derivedFrom(field: "user")
-  withdraws: [Withdraw!]! @derivedFrom(field: "user")
   transactions: [Transaction!]! @derivedFrom(field: "from")
 }
 
@@ -51,46 +49,7 @@ type Stake @entity(immutable: false) {
   user: User!
   amount: BigInt! # uint256
   lockedUntil: BigInt! # uint256
-
-  deposits: [Deposit!]! @derivedFrom(field: "stake")
-  withdraws: [Withdraw!]! @derivedFrom(field: "stake")
-  extends: [Extend!]! @derivedFrom(field: "stake")
-
-  migrated: [Extend!]! @derivedFrom(field: "prevStake")
-}
-
-type Deposit @entity(immutable: true) {
-  id: ID!
-  stake: Stake!
-  user: User!
-  amount: BigInt! # uint256
+  createdAt: Int! # timestamp
+  updatedAt: Int! # timestamp
   transaction: Transaction!
-  timestamp: Int!
-}
-
-type Withdraw @entity(immutable: true) {
-  id: ID!
-  stake: Stake!
-  user: User!
-  amount: BigInt! # uint256
-  transaction: Transaction!
-  timestamp: Int!
-
-  slash: MaybeSlash
-}
-
-type Extend @entity(immutable: true) {
-  id: ID!
-  user: User!
-  stake: Stake!
-  prevStake: Stake!
-  transaction: Transaction!
-  timestamp: Int!
-}
-
-type MaybeSlash @entity(immutable: true) {
-  id: ID! # ID is tx hash - it can't be tx hash + log index because we need to load on tx hash
-  sender: Bytes!
-  token: Bytes!
-  amount: BigInt!
 }
